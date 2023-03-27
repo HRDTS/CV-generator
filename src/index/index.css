@@ -1,0 +1,423 @@
+
+.appInside {
+  display:grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  position: relative;
+  overflow: auto;
+}
+
+.mainButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.groupMainButtons {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.groupMainButton {
+  border-radius: 0;
+}
+
+#title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(227,107,8);
+}
+
+button {
+  background-color: rgb(227,107,8);
+  color: white;
+}
+
+#personalia, #profiel, #opleidingen, #werkervaring, #vaardigheden, #talen {
+  display: none;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.personal, .educational, .professional, .vaardighedenCentral, .talenCentral, .profile {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.render {
+  min-height: 297mm;
+  max-height:297mm;
+  min-width: 210mm;
+  max-width:210mm;
+  border: 1px solid black;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: minmax(100px, 75%) minmax(50px, 25%);
+  grid-template-rows: 100px minmax(min-content, 1fr);
+  overflow: hidden;
+}
+
+.links {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(min-content, max-content));
+  grid-template-columns: minmax(1fr, 100%);
+}
+
+.rechts {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(1px, 340px));
+  background-color:rgb(244,244,244);
+}
+
+
+.headerName {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: rgb(54,60,72);
+  color: white;
+  text-align: center;
+}
+
+.h1 {
+  font-size: xx-large;
+  margin-left: 20px;
+}
+
+.personalSegment {
+  min-height: 10%;
+}
+
+.mobileAndPhone {
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  min-width: 50%;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.header {
+  font-size: 17px;
+  color: rgb(126,1,1);
+}
+
+
+.personalSegment {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.line1, .line2 {
+  height: 5px;
+  background-color: rgb(197,216,240);
+  margin: 2px;
+}
+
+.line1 {
+  background-color: rgb(227,107,8);
+}
+
+.line2 {
+  margin-bottom: 25px;
+}
+
+.headerOfDiv {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  align-content:space-between;
+}
+
+.upperPartEducation, .upperPartProfessional {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content:space-between;
+  word-wrap: break-word;
+  margin-left: 40px;
+}
+
+.upperPartEducation > div, .upperPartProfessional > div {
+  margin: 0px 3px;
+}
+
+.segment, .headerOfDiv, .upperPartEducation, .upperPartProfessional, .upperPartEducation{
+  display: flex;
+  text-align: left;
+  justify-content: space-between;
+  max-width: 580px;
+}
+
+.segmentProfiel {
+  display: flex;
+  text-align: left;
+  word-wrap: break-word;
+  max-width: 550px;
+  margin: 0px 3px;
+}
+
+
+
+.personaliDiv, .vaardighedenDiv, .talenDiv {
+  margin: 15px 2px 15px 10px;
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+.innerDiv1, .innerDiv2 {
+  max-width: 40%;
+  border-right: 3px solid rgb(227,107,8);
+  padding-right: 10px;
+  padding-left: 10px;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+.innerDiv2 {
+  max-width: 30%;
+}
+
+.innerDiv3 {
+  max-width: 20%;
+  border-right: 3px solid rgb(227,107,8);
+  padding-right: 10px;
+  padding-left: 10px;
+  word-wrap: break-word;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  height: max-content;;
+  z-index: 2;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.talenRating {
+  text-decoration: underline;
+}
+
+.inputTaal, .selecTaal, .labelTaal, .inputVaardigheid, .selectVaardigheid, .labelVaardigheid, .labelTaal{
+  display: block;
+}
+
+input {
+  margin-bottom: 20px;
+  border: 3px solid orange;
+  border-radius: 10px;
+  outline: none;
+}
+
+select {
+  border: 1px solid orange;
+  border-radius: 10px;
+  outline: none;
+}
+
+.middleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.selectVaardigheid, .selectTaal {
+  margin-bottom: 20px;
+}
+
+.labelVaardigheid {
+  margin-top: 0px;
+}
+
+
+#profileInput, .noteInput  {
+  width: 70%;
+  height: 200px;
+  border: 3px solid orange;
+  border-radius: 10px;
+  outline: none;
+}
+
+
+.note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.noteInput {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.personalia, .vaardigheden, .talen  {
+  max-width: 198.42px;
+}
+
+.buttons {
+  position: absolute;
+  left:100% ;
+  opacity: 0.9
+}
+
+.deleteButton, .editButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.koppelteken, .wordbreak {
+  display: flex;
+  flex-direction: column;
+}
+
+.letterGrootteMainContent, .letterGrootteSidebar, .koppelteken, .wordbreak, .headerColor, .firstLineColor, .secondLineColor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom:  1px solid orange;
+}
+
+.headerOfDiv > div {
+  word-wrap: break-word;
+}
+
+.mainButtons > *, h1, .middleButton {
+  font-size: 1vw;
+}
+
+.render {
+  scale: 1;
+  transform-origin: top left;
+}
+
+.render {
+  scale: 1;
+}
+
+.renderWrap {
+  height: 297mm;
+  width: 210mm;
+}
+
+@media(max-width: 1500px) {
+  .mainButtons > *, h1, .middleButton {
+    font-size: 1.2vw;
+  }
+  .render {
+    scale: 0.8;
+  }
+  .renderWrap {
+    width: 168mm;
+    height: 237.6mm;
+  }
+}
+
+@media(max-width: 1200px) {
+  .mainButtons > *, h1, .middleButton {
+    font-size: 1.5vw;
+  }
+  .letterGrootteSidebar > *, .headerColor > *, .firstLineColor > *, .secondLineColor > * {
+    margin: 0px;
+  }
+  .render {
+    scale: 0.7;
+  }
+  .renderWrap {
+    width: 147mm;
+    height: 207.9mm;
+  }
+}
+
+@media(max-width: 850px) {
+  .mainButtons > *, h1, .middleButton {
+    font-size: 1.8vw;
+  }
+  .letterGrootteSidebar > *, .headerColor > *, .firstLineColor > *, .secondLineColor > * {
+    margin: 0px;
+  }
+  .render {
+    scale: 0.6;
+  }
+  .renderWrap {
+    width: 126mm;
+    height: 178.2mm;
+  }
+}
+
+@media(max-width: 700px) {
+  .mainButtons > *, h1, .middleButton {
+    font-size: 3vw;
+  }
+  .letterGrootteSidebar > *, .headerColor > *, .firstLineColor > *, .secondLineColor > * {
+    margin: 0px;
+  }
+  .render {
+    scale: 0.5;
+  }
+  .renderWrap {
+    width: 105mm;
+    height: 148.5mm;
+  }
+}
+
+@media(min-height: 700px   ) {
+  .mainButtons > *, h1, .middleButton {
+    font-size: 1.5vh;
+  }
+}
+
+.groupMainButton {
+  padding: 0;
+}
+
+.middleButton {
+  width: 45%;
+  min-height: 5vh;
+  padding: 0px 2px;
+}
+
+form > input {
+  width: 70%;
+  min-height: 30px;
+}
+
+.centralButtons {
+  min-width: 250px;
+}
+
+
+
