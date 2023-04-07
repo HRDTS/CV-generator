@@ -179,6 +179,7 @@ code {
   word-wrap: break-word;
   max-width: 550px;
   margin: 0px 3px;
+  overflow-wrap: anywhere;
 }
 
 
@@ -190,7 +191,7 @@ code {
 }
 
 .innerDiv1, .innerDiv2 {
-  max-width: 40%;
+  max-width: 30%;
   border-right: 3px solid rgb(227,107,8);
   padding-right: 10px;
   padding-left: 10px;
@@ -198,12 +199,11 @@ code {
   hyphens: auto;
 }
 .innerDiv2 {
-  max-width: 30%;
+  max-width: 20%;
 }
 
 .innerDiv3 {
   max-width: 20%;
-  border-right: 3px solid rgb(227,107,8);
   padding-right: 10px;
   padding-left: 10px;
   word-wrap: break-word;
