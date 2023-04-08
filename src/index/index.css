@@ -3,7 +3,6 @@
   display:grid;
   grid-template-columns: 1fr 2fr 1fr;
   position: relative;
-  overflow: auto;
 }
 
 .mainButtons {
@@ -71,7 +70,7 @@ code {
   min-width: 210mm;
   max-width:210mm;
   border: 1px solid black;
-  margin: 10px;
+  margin: 10px 0px;
   display: grid;
   grid-template-columns: minmax(100px, 75%) minmax(50px, 25%);
   grid-template-rows: 100px minmax(min-content, 1fr);
@@ -197,9 +196,7 @@ code {
   padding-left: 10px;
   word-wrap: break-word;
   hyphens: auto;
-}
-.innerDiv2 {
-  max-width: 20%;
+  width: 30%;
 }
 
 .innerDiv3 {
@@ -207,6 +204,7 @@ code {
   padding-right: 10px;
   padding-left: 10px;
   word-wrap: break-word;
+  width: 20%;
 }
 
 .buttons {
@@ -375,6 +373,9 @@ select {
   .renderWrap {
     width: 126mm;
     height: 178.2mm;
+  }
+  .appInside {
+    overflow: auto;
   }
 }
 
