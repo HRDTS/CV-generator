@@ -1,5 +1,5 @@
 <h1>Project title:</h1>
-**A mobile optimized, fully responsive CV generator with custom style optimizing and PDF download function.**
+<strong>A mobile optimized, fully responsive CV generator with custom style optimizing and PDF download function.</strong>
 
 <h2>Screenshot one: </h2>
 
