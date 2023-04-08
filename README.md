@@ -2,12 +2,11 @@
 **A mobile optimized, fully responsive CV generator with custom style optimizing and PDF download function.**
 
 <h2>Screenshot one: </h2>
+
 ![CV Generator Screenshot](https://github.com/HRDTS/CV-generator/blob/main/cvss1.png?raw=true)
 <h2>Screenshot two:</h2>
+
 ![CV Generator Screenshot](https://raw.githubusercontent.com/HRDTS/CV-generator/main/cvss2.png)
-
-
-
 
 
 <h1>Project description:</h1>
