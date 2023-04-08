@@ -1,3 +1,7 @@
+![CV Generator Screenshot](https://raw.githubusercontent.com/HRDTS/CV-generator/main/cvss2.png)
+![CV Generator Screenshot](https://github.com/HRDTS/CV-generator/blob/main/cvss1.png?raw=true)
+
+
 **Project title:**
 A mobile optimized, fully responsive CV generator with custom style optimizing and PDF download function.
 
