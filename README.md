@@ -1,5 +1,6 @@
 <h1>Project title:</h1>
 <strong>A mobile optimized, fully responsive CV generator with custom style optimizing and PDF download function.</strong>
+<strong>LIVE : https://cv-generator-alpha.vercel.app/ </strong>
 
 <h2>Screenshot one: </h2>
 
@@ -8,7 +9,7 @@
 
 ![CV Generator Screenshot](https://raw.githubusercontent.com/HRDTS/CV-generator/main/cvss2.png)
 
-<strong>LIVE : https://cv-generator-alpha.vercel.app/ </strong>
+
 
 <h1>Project description:</h1>
 Note: this application is only available in Dutch. I will translate the words to English in this readme so non-Dutch readers will be able to read it too.
