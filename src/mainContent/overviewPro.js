@@ -11,7 +11,14 @@ const OverviewPro = (props) => {
     const handleRemove = props.handleRemove
     const handleEdit = props.handleEdit
     const hideDeleteEdit = props.hideDeleteEdit
-
+    function reverseString(dateStr) {
+        if (dateStr != '') {
+            const parts = dateStr.split('-');
+            return parts[2] + '-' + parts[1] + '-' + parts[0];
+        } else {
+            return ''
+        }
+      }
 
 
     const updatedTasks = tasks.map((task, index) => {
@@ -33,7 +40,7 @@ const OverviewPro = (props) => {
             <div className="upperPartProfessional">
                 <div className="innerDiv1"><b>{task.company} </b></div>
                 <div className="innerDiv2"><b>{task.position}</b></div>
-                <div className="innerDiv3"><b>{task.date}</b></div>
+                <div className="innerDiv3"><b>{reverseString(task.dateStart)} {reverseString(task.dateEnd)}</b></div>
                 <div className="buttons">
                 <button style={hideDeleteEdit ? {display: 'none'} : {display: 'block'}} className="deleteButton" onClick={() => handleRemove(task.id)} >delete</button>
                 <button style={hideDeleteEdit ? {display: 'none'} : {display: 'block'}} className="editButton" onClick={() => handleEdit(task.id)} >edit</button>

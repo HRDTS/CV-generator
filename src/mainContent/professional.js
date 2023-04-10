@@ -28,14 +28,22 @@ const Professional = (props) => {
               type="text"
               id="positionInput"            
             />
-            <label htmlFor="dateInput">Begin- en einddatum</label>
+            <label htmlFor="dateInput">Begindatum</label>
             <input
               required
-              onChange={props.date}
-              value={props.dateValue}
-              type="text"
+              onChange={props.dateStart}
+              value={props.dateValueStart}
+              type='date'
+              id="dateInputBegin"            
+            />
+            <label htmlFor="dateInput">Einddatum</label>
+            <input
+              required
+              onChange={props.dateEnd}
+              value={props.dateValueEnd}
+              type='date'
               id="dateInput"            
-            />           
+            />             
             <NotesOverviewPro notes={props.notes} handleNoteChange={props.handleNoteChangePro} />
             <button type="button" onClick={props.addNote} className='middleButton'>Voeg bulletpoint toe</button>
             <button type="button" onClick={props.deleteNotePro} className='middleButton'>Verwijder bulletpoint</button>

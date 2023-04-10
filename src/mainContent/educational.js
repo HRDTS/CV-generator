@@ -29,12 +29,20 @@ const Educational = (props) => {
               type="text"
               id="studyInput"            
             />
-            <label htmlFor="dateInput">Begin- en einddatum</label>
+            <label htmlFor="dateInput">Begindatum</label>
             <input
               required
-              onChange={props.date}
-              value={props.dateValue}
-              type="text"
+              onChange={props.dateStart}
+              value={props.dateValueStart}
+              type="date"
+              id="dateInput"            
+            />
+            <label htmlFor="dateInput">Einddatum</label>
+            <input
+              required
+              onChange={props.dateEnd}
+              value={props.dateValueEnd}
+              type="date"
               id="dateInput"            
             />
             <NotesOverviewEdu notes={props.notes} handleNoteChange={props.handleNoteChange} />

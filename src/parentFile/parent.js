@@ -110,13 +110,13 @@ const Parent = () => {
      // The user is also able to select a bulletpoint either to delete or edit. I achieve this by adding a delete/edit button when mapping through the bulletpoints.
      // I save the unique ID on this button and when the user for example wants to delete a bulletpoint, a function is called to parse through the eduTasks for a bulletpoint with that specific ID.
      // The same method is used for the 'professional' segment below with the proTask and proTasks (with an s at the end)
-    const [eduTask, setEduTask] = useState({school: '', study: '', date: '', notes: [], id: uniqid()})
+    const [eduTask, setEduTask] = useState({school: '', study: '', dateStart:'', dateEnd:'', notes: [], id: uniqid()})
     const [eduTasks, setEduTasks] = useState([])
     const [eduSelectedTask, setEduSelectedTask] = useState('')
     const [eduEditTrueOrFalse, setEduEditTrueOrFalse] = useState(false)
 
 
-    const [proTask, setProTask] = useState({company:'', position:'', notes: [], date:'', id: uniqid()})
+    const [proTask, setProTask] = useState({company:'', position:'', notes: [], dateStart:'', dateEnd:'', id: uniqid()})
     const [proTasks, setProTasks] = useState([])
     const [proSelectedTask, setProSelectedTask] = useState('')
     const [proEditTrueOrFalse, setProEditTrueOrFalse] = useState(false)
@@ -249,14 +249,20 @@ const Parent = () => {
         setEduTask({...eduTask, study: data.target.value})
     }
 
-    function date(data) {
-        setEduTask({...eduTask, date: data.target.value})
+    function dateStart(data) {
+        console.log(data)
+        setEduTask({...eduTask, dateStart: data.target.value})
+    }
+
+    function dateEnd(data) {
+        console.log(data)
+        setEduTask({...eduTask, dateEnd: data.target.value})
     }
 
     const submit = (e) => { // This is where the input from the user gets transfered from eduTask state to eduTasks (with an s at the end)
         e.preventDefault();
         setEduTasks(eduTasks.concat(eduTask))
-        setEduTask({school: '', study: '', date: '', notes: [], id: uniqid()})
+        setEduTask({school: '', study: '', dateStart: '', dateEnd: '', notes: [], id: uniqid()})
     }
 
     const handleRemove = (id) => {
@@ -267,7 +273,7 @@ const Parent = () => {
     const handleEdit = (id, e) => { // This is the function that will be added the a button next to each bulletpoint to allow the user to edit the bulletpoint.
         const selectList = eduTasks.filter(element => {// this function is passed as a prop to the Educational component (educational.js)
             if(element.id === id) {
-                const rightElement = {school: element.school, study: element.study, date: element.date, notes: element.notes, id: element.id};
+                const rightElement = {school: element.school, study: element.study, dateStart: element.dateStart, dateEnd:element.dateEnd, notes: element.notes, id: element.id};
                 setEduTask(rightElement);
                 setEduEditTrueOrFalse(true);
                 setEduSelectedTask(id)
@@ -282,13 +288,14 @@ const Parent = () => {
             if(element.id === eduSelectedTask) {
                 element.school = eduTask.school
                 element.study = eduTask.study
-                element.date = eduTask.date
+                element.dateStart = eduTask.dateStart
+                element.dateEnd = eduTask.dateEnd
                 element.notes = eduTask.notes
             }
             return element
         }) 
         setEduTasks(change)
-        setEduTask({school: '', study: '', date: '', notes:[], id: uniqid()})
+        setEduTask({school: '', study: '', dateStart: '', dateEnd: '', notes:[], id: uniqid()})
         setEduSelectedTask('')
         setEduEditTrueOrFalse(false)
     }
@@ -334,14 +341,18 @@ const Parent = () => {
         setProTask({...proTask, mainResponsibilities: data.target.value})
     }
 
-    function proDate (data) {
-        setProTask({...proTask, date: data.target.value})
+    function proDateStart (data) {
+        setProTask({...proTask, dateStart: data.target.value})
+    }
+
+    function proDateEnd (data) {
+        setProTask({...proTask, dateEnd: data.target.value})
     }
 
     const proSubmit = (e) => {
         e.preventDefault();
         setProTasks(proTasks.concat(proTask))
-        setProTask({company:'', position:'', notes:[], date:'', id: uniqid()})
+        setProTask({company:'', position:'', notes:[], dateStart:'', dateEnd:'', id: uniqid()})
     }
 
     const handleRemovePro = (id) => {
@@ -352,7 +363,7 @@ const Parent = () => {
     const handleEditPro = (id) => {
         const selectList = proTasks.filter(element => {
             if(element.id === id) {
-                const rightElement = {company: element.company, position: element.position, notes: element.notes, date: element.date, id: element.id};
+                const rightElement = {company: element.company, position: element.position, notes: element.notes, dateStart: element.dateStart, dateEnd: element.dateEnd, id: element.id};
                 setProTask(rightElement);
                 setProEditTrueOrFalse(true);
                 setProSelectedTask(id)
@@ -368,12 +379,13 @@ const Parent = () => {
                 element.company = proTask.company
                 element.position = proTask.position
                 element.notes = proTask.notes
-                element.date = proTask.date
+                element.dateStart = proTask.dateStart
+                element.dateEnd = proTask.dateEnd
             }
             return element
         }) 
         setProTasks(change)
-        setProTask({company:'', position:'', notes:[], date:'', id: uniqid()})
+        setProTask({company:'', position:'', notes:[], dateStart:'', dateEnd:'', id: uniqid()})
         setProSelectedTask('')
         setProEditTrueOrFalse(false)
     }
@@ -638,8 +650,10 @@ const Parent = () => {
                     schoolValue={eduTask.school}
                     study={study}
                     studyValue={eduTask.study}
-                    date={date}     
-                    dateValue={eduTask.date}
+                    dateStart={dateStart}     
+                    dateValueStart={eduTask.dateStart}
+                    dateEnd={dateEnd}     
+                    dateValueEnd={eduTask.dateEnd}
                     submit={ (e) => submit(e) }
                     eduEditTrueOrFalse={eduEditTrueOrFalse}
                     handleEditChanges={handleEditChanges}
@@ -657,8 +671,10 @@ const Parent = () => {
                     positionValue={proTask.position}
                     mainResponsibilities={proMainResponsibilities}
                     mainResponsibilitiesValue={proTask.mainResponsibilities}
-                    date={proDate}
-                    dateValue={proTask.date}
+                    dateStart={proDateStart}
+                    dateValueStart={proTask.dateStart}
+                    dateEnd={proDateEnd}
+                    dateValueEnd={proTask.dateEnd}
                     submit={(e) => proSubmit(e)}
                     proEditTrueOrFalse={proEditTrueOrFalse}
                     handleEditChanges={handleEditChangesPro}
